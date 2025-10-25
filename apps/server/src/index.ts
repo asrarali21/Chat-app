@@ -22,17 +22,13 @@ const io = new Server(server , {
 
 
 
-io.on("connection" , (socket)=>{
+io.on("connect" , (socket)=>{
         console.log("A user connected:", socket.id)
     socket.on("message" , (msg)=>{
       console.log(msg)
     })
 })
 
-
-app.get("/" , (req , res)=>{
-    res.send("hello boi")
-})
 
 
 
