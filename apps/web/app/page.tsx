@@ -9,10 +9,9 @@ export default function Home({}) {
 
     const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
-
-
  
-
+  console.log(messages)
+  
   useEffect(() => {
      const socket = getSocket();
      console.log(socket)
@@ -46,6 +45,10 @@ export default function Home({}) {
 <h1>All the message will there here </h1>
 <input type="text"  onChange={(e)=> setInput(e.target.value)}/>
      <button onClick={sendMessage}>send</button>
+
+     {messages.map((message , i)=>(
+      <li key={i}>{message}</li>
+     ))}
     </div>
    </div>
   );
